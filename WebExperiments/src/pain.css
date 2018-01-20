@@ -1,0 +1,237 @@
+@keyframes blink-colors-YB-still
+	{
+	0%
+		{
+		background-color: #000000;
+		}
+	100%
+		{
+		background-color: #000000;
+		}
+	}
+@keyframes blink-colors-YB
+	{
+	0%
+		{
+		background-color: #FFFF00;
+		}
+	50%
+		{
+		background-color: #0000FF;
+		}
+	100%
+		{
+		background-color: #FFFF00;
+		}
+	}
+@keyframes blink-colors-MB-still
+	{
+	0%
+		{
+		background-color: #FF00FF;
+		}
+	100%
+		{
+		background-color: #FF00FF;
+		}
+	}
+@keyframes blink-colors-MB
+	{
+	0%
+		{
+		background-color: #FF00FF;
+		}
+	10%
+		{
+		background-color: #000000;
+		}
+	100%
+		{
+		background-color: #FF00FF;
+		}
+	}
+@keyframes hue-filter-still
+	{
+	0%
+		{
+		filter: hue-rotate(0deg);
+		}
+	100%
+		{
+		filter: hue-rotate(0deg);
+		}
+	}
+@keyframes hue-filter
+	{
+	0%
+		{
+		filter: hue-rotate(0deg);
+		}
+	100%
+		{
+		filter: hue-rotate(360deg);
+		}
+	}
+@keyframes blink-filters-still
+	{
+	0%
+		{
+		filter: invert(1);
+		}
+	100%
+		{
+		filter: invert(1);
+		}
+	}
+@keyframes blink-filters
+	{
+	0%
+		{
+		filter: invert(1);
+		}
+	25%
+		{
+		filter: contrast(1600%);
+		}
+	50%
+		{
+		filter: invert(1);
+		}
+	75%
+		{
+		filter: contrast(10%);
+		}
+	100%
+		{
+		filter: invert(1);
+		}
+	}
+@font-face
+	{
+	font-family: Md_Sad;
+	src: url(fonts/Md_Sad.ttf);
+	}
+@font-face
+	{
+	font-family: Scraps;
+	src: url(fonts/SCRAPS.ttf);
+	}
+@font-face
+	{
+	font-family: MovieLettersCyrillic;
+	src: url(fonts/MovieLettersCyrillic.ttf);
+	}
+@font-face
+	{
+	font-family: Greece;
+	src: url(fonts/ds_greece.ttf);
+	}
+@font-face
+	{
+	font-family: Zanes;
+	src: url(fonts/zanes.ttf);
+	}
+
+#page_header
+	{
+	background-image: url("blood-drip-23.gif") !important;
+	}
+.top_profile_img
+	{
+	animation: blink-filters 250ms infinite !important;
+	}
+.top_profile_img:hover
+	{
+	animation: blink-filters-still 100s infinite !important;
+	}
+input.text.ts_input
+	{
+	color: #FF0000 !important;
+	font-size: 25px !important;
+	font-family: Zanes !important;
+	}
+.input_back_content
+	{
+	;
+	}
+.input_back
+	{
+	background-color: #00FF00 !important;
+	}
+.ts_wrap .input_back_content
+	{
+	color: #00FFFF;
+	font-size: 25px;
+	font-family: Scraps;
+	}
+#ts_input
+	{
+	background-color: #000000 !important;
+	}
+#ts_input:focus
+	{
+	animation: blink-colors-YB 50ms infinite !important;
+	}
+.top_profile_name
+	{
+	font-size: 35px !important;
+	color: #FFFF00;
+	font-family: Greece !important;
+	}
+#side_bar:hover
+	{
+	animation: blink-colors-MB-still 100s 1 !important;
+	}
+#side_bar
+	{
+	background-position: 0 0 !important;
+	padding-left: 0 !important;
+	animation: blink-colors-MB 140ms steps(3) infinite !important;
+	}
+.left_label:hover
+	{
+	background-color: #00FF00 !important;
+	}
+.left_label
+	{
+	font-size: 15px !important;
+	font-family: Scraps !important;
+	color: #0000FF !important;
+	}
+.left_menu_nav
+	{
+	color: #FFFFFF !important;
+	font-size: 20px !important;
+	font-family: Zanes !important;
+	}
+.ui_actions_menu_item
+	{
+	color: #FFFFFF !important;
+	font-size: 20px !important;
+	font-family: Zanes !important;
+	}
+
+body
+	{
+	background-image: url("наркомания.jpg");
+	/*animation: blink-colors-YB 1s infinite !important;*/
+	}
+
+.avatar
+	{
+	animation: hue-filter 5s linear infinite;
+	}
+.avatar:hover
+	{
+	animation: hue-filter-still 100s infinite;
+	}
+.link
+	{
+	font-size: 120px;
+	font-family: "Futurepolis3000";
+	cursor: not-allowed;
+	}
+.link:before
+	{
+	content: "(Не уходи) " attr(href);
+	}
