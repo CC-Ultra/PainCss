@@ -24,6 +24,32 @@
 		background-color: #FFFF00;
 		}
 	}
+@keyframes blink-colors-RG
+	{
+	0%
+		{
+		background-color: #00FF00;
+		}
+	50%
+		{
+		background-color: #FF0000;
+		}
+	100%
+		{
+		background-color: #00FF00;
+		}
+	}
+@keyframes blink-colors-RG-still
+	{
+	0%
+		{
+		background-color: #00FF00;
+		}
+	100%
+		{
+		background-color: #00FF00;
+		}
+	}
 @keyframes blink-colors-MB-still
 	{
 	0%
@@ -109,78 +135,123 @@
 @font-face
 	{
 	font-family: Md_Sad;
-	src: url(fonts/Md_Sad.ttf);
+	src: url(https://rawgit.com/CC-Ultra/PainCss/master/WebExperiments/src/fonts/Md_Sad.ttf);
 	}
 @font-face
 	{
 	font-family: Scraps;
-	src: url(fonts/SCRAPS.ttf);
+	src: url(https://rawgit.com/CC-Ultra/PainCss/master/WebExperiments/src/fonts/SCRAPS.ttf);
 	}
 @font-face
 	{
 	font-family: MovieLettersCyrillic;
-	src: url(fonts/MovieLettersCyrillic.ttf);
+	src: url(https://rawgit.com/CC-Ultra/PainCss/master/WebExperiments/src/fonts/MovieLettersCyrillic.ttf);
 	}
 @font-face
 	{
 	font-family: Greece;
-	src: url(fonts/ds_greece.ttf);
+	src: url(https://rawgit.com/CC-Ultra/PainCss/master/WebExperiments/src/fonts/ds_greece.ttf);
 	}
 @font-face
 	{
 	font-family: Zanes;
-	src: url(fonts/zanes.ttf);
+	src: url(https://rawgit.com/CC-Ultra/PainCss/master/WebExperiments/src/fonts/zanes.ttf);
 	}
 
+.ui_actions_menu._ui_menu, .pv_author_block, .page_block_header, #ts_input, .ui_search_field, .ms_items_more
+	{
+	background-color: #000000 !important;
+	}
+#im_dialogs:hover, .ui_actions_menu_item:hover
+	{
+	background-color: #00FFFF !important;
+	animation: blink-colors-RG-still 100s infinite !important;
+	}
 #page_header
 	{
-	background-image: url("blood-drip-23.gif") !important;
+	background-color: #A0522D;
+	background-image: url(https://78.media.tumblr.com/991c0fa31f233b0d200f8f975ccadc1e/tumblr_p2wd7e24xn1x32e91o1_500.gif) !important;
+	}
+.reply_image, .im-prebody, .ts_contact_img
+	{
+	animation: blink-filters 400ms infinite !important;
+	}
+.people_cell_img, .copy_post_image, .right_list_img
+	{
+	animation: blink-filters 300ms infinite !important;
+	}
+.cell_img, .pv_author_img, .friends_photo_img
+	{
+	animation: blink-filters 450ms infinite !important;
+	}
+.page_avatar_img, .post_img, .post_field_user_image
+	{
+	animation: blink-filters 350ms infinite !important;
 	}
 .top_profile_img
 	{
 	animation: blink-filters 250ms infinite !important;
 	}
+.im_grid
+	{
+	animation: blink-filters 700ms infinite !important;
+	}
+.apps_feed_user_photo, .friends_find_user_img, .nim-peer--photo
+	{
+	animation: blink-filters 550ms infinite !important;
+	}
 .top_profile_img:hover
 	{
 	animation: blink-filters-still 100s infinite !important;
 	}
-input.text.ts_input
+input.text.ts_input, .ui_search_field, .fakeinput,div[contenteditable=true],input.big_text,input.file,input.search,input.text,input[type=button],input[type=password],input[type=search],input[type=submit],input[type=text],input[type~=email],input[type~=password],input[type~=search],input[type~=text],textarea, #ts_input, .reply_fakebox, .emoji_smiles_row, .emoji_cat_title, .im-right-menu--close
 	{
-	color: #FF0000 !important;
 	font-size: 25px !important;
 	font-family: Zanes !important;
+	cursor: url("data:image/png;charset=utf-8;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAEnRAABJ0QBqbfkUwAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xNkRpr/UAAATASURBVFhHvZZtTJNXGIbNFn+46BYLiTDJADdEYS7yaTemFAeGKbKhFRChdOVT+awiKIqgOBG0BrPAHAlo2BxzMl3E2U0KgwFtwdKWFlq+Wlod4Cg4aKEiwnuv+HuJvG+A8/u+r+ecJ8+5z1mxguQiCGL74+eEWDs5g7GpqdlmtdqTJIK6vJ8g0rVzxHB5zxAKpAMQPB7GhHn6YZNe70qdSsLJN5lqYsQyBNa1gX6vGZxGOdqNRrQNDp4bHR19mwSKmnSEIHbz+rX9nPYORMm7wKgXg2nZjPa5GXe6lGnUqCRcIvNkfYZchRiJAue6e1Ck0SC9ewC3B4fqb8lk60mgqEmfvHy584SiT7tfJENouxR7RRLsE3ai9tkzori5OZEalYRriiBqryg1OGrpAk/Xi2PyDvhWC3BJ2KbK5fPdSaCoSccIop77pwTBv7cgs7sXiRIZPrv5AE/GJ5526PVfUKOScA0RBCtLqNAFNQiR2K8GWyLH/pom6M1mNHV1Lf0QDszN3ajU/0PwevrB0/YjTa5A2MMW6E0mQqxWM0mchZpU9OJlXnRj53jAX1Ik9/TisOU2+Nz6BY0DA7Wq4eEPqVFJuJ4SRM59w8RYoeX6nepTgSPuQBi/Fb2mSdxTdCaQQFGTCqenqzhNMhxseYS8XiUKu7uQKVJBoB+q042M2FKjknBZHqLQ8+0qDUfcjnR1J8JaJQhrkKPPaEK1VLr0Q2i0XMMCSTcS26S4qO9DhrgV9JJKlD+S1d2USKxJnGXhUualS45MHm/VvGM+B7JFCoS2tCFbOz+Ecuyp/g2TL15ArdWmLJy6QOWX+XkHGVlZ5pyq6ufJ5RUC3bDhyXd9OrBlSsT1aBDV1olQSyiNWHJAtNg54JUUu3FbUgI2cWIRX1EFemoqyvj1uNLQgotdapTrdMjr7Aa3pQMjU1OQKhf5NfSID3rL+VBoyiZ2DJzuCmF9oQS+P9yH/5lCMMoqEKZUIOqPWqT99CtGR58hr/yGIODYSSaTm0tbYINfL6Mzmau2HoxqVhjGZuiZp2FbUArHM5dh91UcnLhp+Cg7G59kZOOqoBFbWGz4xaXD73jG7EZW+PXX00ko1AbDGre4xOAPuJka+8ulhEPlbcKh6CrsT5yBzdkirL1eA5ucfDie5WEzh433mfv+DkxNjyZRYmHSLXGxBbQ9n1d6c1k814wjsDt5Glb5xSaH6OPYkJSGSKEMzuwEuEdEwtaX0bEwKgVV0G7HQjeGM6w8nWDl83GGQzQHNsHBNYp/jXxGbJLpXYY/f/0OfycK6NdbCnLTNxwO3/5gl5c97KzXwNl5HcM2PDxghYfHynm3R3z8Sjs6/VVuLMmKiw75nh3CwKFAd4QHbsU2d9drNBrNbkmK/R80grVvB4vpo/TzfA/raKtBW/sOLLql/w3Nb8byGLkmfn2RH5YSiaPJDBxhu8Nt56c/uxw4sHpZOjA9Mys4VXINzpYcsI1gw+UQC26sWLy51Xvpf0PzJzSaZ3xL7tyV77pQBLfiUrhYwsmbHYtBg2FMqdHsX5YuTBJEZk5Z+ejmSA725J5H4Y9VeDw+bhSpVAHLsoFXRXJz33AMCfXifvPtycHx8Xsimcxh+YovcqX/AFlkt/EJsE99AAAAAElFTkSuQmCC"), text !important;
 	}
-.input_back_content
+input.text.ts_input, .wall_reply_text, .im-mess--text, .wall_module, ._im_log_body, .im-page--title-meta, .fakeinput,div[contenteditable=true],input.big_text,input.file,input.search,input.text,input[type=button],input[type=password],input[type=search],input[type=submit],input[type=text],input[type~=email],input[type~=password],input[type~=search],input[type~=text],textarea
 	{
-	;
+	color: #FF0000 !important;
 	}
-.input_back
+.input_back, .left_label:hover, .fakeinput,div[contenteditable=true],input.big_text,input.file,input.search,input.text,input[type=button],input[type=password],input[type=search],input[type=submit],input[type=text],input[type~=email],input[type~=password],input[type~=search],input[type~=text],textarea
 	{
 	background-color: #00FF00 !important;
 	}
+.ts_wrap .input_back_content, .left_label, .im-mess--text, .wall_module, ._im_log_body, .audio_pl__title, .audio_item__title
+	{
+	font-family: Scraps !important;
+	}
 .ts_wrap .input_back_content
 	{
-	color: #00FFFF;
-	font-size: 25px;
-	font-family: Scraps;
+	color: #00FFFF !important;
+	font-size: 25px !important;
 	}
-#ts_input
+.ts_cont_wrap
 	{
-	background-color: #000000 !important;
+	background: #00FF00 !important;
 	}
 #ts_input:focus
 	{
 	animation: blink-colors-YB 50ms infinite !important;
 	}
+.ui_search_field:focus
+	{
+	animation: blink-colors-YB 150ms infinite !important;
+	}
 .top_profile_name
 	{
 	font-size: 35px !important;
-	color: #FFFF00;
+	color: #FFFF00 !important;
 	font-family: Greece !important;
 	}
 #side_bar:hover
 	{
 	animation: blink-colors-MB-still 100s 1 !important;
+	}
+.ui_search_fltr
+	{
+	animation: blink-colors-MB 100ms infinite !important;
 	}
 #side_bar
 	{
@@ -188,50 +259,110 @@ input.text.ts_input
 	padding-left: 0 !important;
 	animation: blink-colors-MB 140ms steps(3) infinite !important;
 	}
-.left_label:hover
+.fakeinput:focus,div[contenteditable=true]:focus,input.big_text:focus,input.file:focus,input.search:focus,input.text:focus,input[type=button]:focus,input[type=password]:focus,input[type=search]:focus,input[type=submit]:focus,input[type=text]:focus,input[type~=email]:focus,input[type~=password]:focus,input[type~=search]:focus,input[type~=text]:focus,textarea:focus
 	{
-	background-color: #00FF00 !important;
+	animation: blink-colors-MB 200ms infinite !important;
 	}
-.left_label
+#im_dialogs
 	{
-	font-size: 15px !important;
-	font-family: Scraps !important;
+	animation: blink-colors-RG 550ms infinite !important;
+	}
+.topic_title
+	{
+	color: #FFFF00 !important;
+	}
+.left_label, .audio_pl__title, .audio_item__title, .friends_field_title, .ph_content, .author
+	{
 	color: #0000FF !important;
 	}
-.left_menu_nav
+.left_label, .im-mess-stack--pname, .group_row_title
+	{
+	font-size: 15px !important;
+	}
+.left_menu_nav, .ui_actions_menu_item
 	{
 	color: #FFFFFF !important;
-	font-size: 20px !important;
 	font-family: Zanes !important;
 	}
-.ui_actions_menu_item
+.page_block, .pv_cont, .narrow_column, .im-page--toolsw, .im-chat-input
 	{
-	color: #FFFFFF !important;
+	background-image: url(https://pp.userapi.com/c840728/v840728591/477b5/8yfHBFIDCCY.jpg) !important;
+	}
+.wall_reply_text, #page_body, .im-mess--text, .wall_module, ._im_log_body, .friends_find_user_name, .left_menu_nav, .ui_actions_menu_item, .topic_title, .topic_info, .header_label
+	{
 	font-size: 20px !important;
+	}
+.ui_rmenu_item, .ui_actions_menu_sublist, .im-page--back
+	{
 	font-family: Zanes !important;
 	}
-
+.im-mess-stack--pname, .audio_friend_name, .video_item_info, .video_item_title, .mem_link, .group_row_title, .friends_find_user_name, .friends_field_title, .im-page--title-main-in, .author, .topic_title
+	{
+	font-family: Greece !important;
+	}
+.photos_row, .apps_recent_row, .app_cat_image, .apps_wide_img, .group_row_img, .page_album_thumb
+	{
+	animation: hue-filter 500ms linear infinite !important;
+	}
+.page_square_photo, .crisp_image, .page_video_thumb, .page_post_thumb_wrap
+	{
+	animation: hue-filter 750ms linear infinite !important;
+	}
+.mv_info
+	{
+	background-color: #FF0000 !important;
+	}
+.audio_page_player.audio_page_player_fixed
+	{
+	background: #FF8000 !important;
+	}
+.audio_page_layout .audio_friends_list
+	{
+	background-color: #000000 !important;
+	}
+.im-page_classic.im-page .im-page--chat-body-wrap-inner
+	{
+	background-color: #000000 !important;
+	}
+.ui_tabs_header
+	{
+	background-color: #698339 !important;
+	}
+.im-page--title-meta
+	{
+	font-family: MovieLettersCyrillic !important;
+	}
+.ui_search_field
+	{
+	color: #8F0F80 !important;
+	}
+.page_status_editor, .editor
+	{
+	background-color: #8000FF !important;
+	}
+.submit_post
+	{
+	background: #A0522D !important;
+	}
+.button_blue button, .button_gray button, .button_light_gray button, .flat_button
+	{
+	color: #FF00FF !important;
+	background-color: #000FFF !important;
+	font-size: 25px !important;
+	font-family: Md_Sad !important;
+	}
+body, .post_content, .wall_post_text, .wall_reply_text, .audio_row__inner, .audio_row__more_action, .audio_row__action, .ui_actions_menu_icons, .audio_row__play_btn, .audio_row__cover_icon, .owner_photo_bubble_action_in, .nim-dialog--name, .wall_module, .video_item_thumb, .ui_search_button_search, .flat_button, .im-mess--reply, .im-page--header-icon, .im-mess--edit, .im-mess--fav, .im-mess--check, .im-chat-input--attach-label, .emoji_smile_icon_vector, .im-mess, .pv_bottom_info, .pv_like_link, .post_views_count, .addpost_opt, .im-dialog-select--btn, .nim-dialog--close, .nim-dialog--cw, .nim-dialog--content, .nim-dialog--photo, .nim-dialog, .page_poll_radio, .radiobtn_label, #stl_side, .ui_toggler_wrap, .ui_toggler, .pv_desc_edit, .pv_like, .pv_can_edit, #layer_wrap, .pv_close_btn, .mv_playlist_header_autoplay_icon, .mv_playlist_header_reverse_icon, .mv_playlist_controls, .mv_top_button.mv_top_close, .mv_top_button.mv_top_minimize, #mv_top_pl_toggle
+	{
+	cursor: url("data:image/png;charset=utf-8;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwABJ0YAASdGAdZJJ9oAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMTZEaa/1AAACGElEQVRYR72XTShEURTHj8hYkY8dWSgbn9lZWCgsJBullOwkKdlTFqJshP3ULBRrC0U0W8lSSiErC6nJVw1mBr+r++oZM3Pvm/uYOr2pOf//+d1zz7vvjUiIn5TIQIh2wa0yIgdvIm3BlSEoPkVKiYcPkfUQ7IJbsPJ2AD4BuCciwR0cFWmRKQWgIcYc7YLL2f+YD+AouIOjgrZf+AAyfG9ytLSXU7yW+PAA9Das2Ds4ZnL/D/mLa4BbrmWO1nZyVr+cDaAhhu0cHLMYwHgegF1Ha7NctZkOPOUBSPFbvdnFIYMDqCtXcd8dMe9gb5aywhkDwDW/l5idisxg/7cKAehh7CvS3iyjA1cmACB3zE4WGeqJR8FWYhLTKHFuKq47kERTY1HiZwriOoSDFFoiDolHm4J57oi5ggD6duqk4DQRU2d79vFabHHdhbOcw8hjdIJCceLZpYCN9l2k+1cXFBXRo1f9pxDUiBbcBhIq1YARx8T3y0WYobqsalgNI4ktDN0a17uQISatALwkipcDMULsESlXGBZ1EgjAnwxAA0O7wPXSBQR9R9EQSqgGl5eQXnUMY/YSFAbNphOAX5wQqVJnBzCntucGuQmgK0KD8IzUfwMgNoh7U1fIGQ8dwDPEPALAKNd9Ip3naI7/GYDfmOKNDO4ibb/xg6jtehVp/hcIb3AB6Adkm+JJDbP6bwBZXammK7PA7H0BU7ewMtJI68UAAAAASUVORK5CYII="), default !important;
+	}
 body
 	{
-	background-image: url("наркомания.jpg");
-	/*animation: blink-colors-YB 1s infinite !important;*/
+	background-image: url(https://pp.userapi.com/c840029/v840029316/6b0e3/2pwnyOxp9Mw.jpg) !important;
+	font-size: 20px !important;
+	font-family: MovieLettersCyrillic !important;
 	}
-
-.avatar
+a
 	{
-	animation: hue-filter 5s linear infinite;
-	}
-.avatar:hover
-	{
-	animation: hue-filter-still 100s infinite;
-	}
-.link
-	{
-	font-size: 120px;
-	font-family: "Futurepolis3000";
-	cursor: not-allowed;
-	}
-.link:before
-	{
-	content: "(Не уходи) " attr(href);
+	color: #FFFF00 !important;
+	cursor: url("data:image/png;charset=utf-8;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAEnRQABJ0UBe/AGtwAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xNkRpr/UAAAFFSURBVFhH7VUhkgJBDGyBQJxAIBAIJALBAxA8AIlAnrgH3G8QSAQSwQMQCCQCuQJ58gTiBGKvQ8ISoHbZAraAqhFdzKR2kk6nZ0Acx3gmnlpcGg8EggIvogDQph+7Du3kagKt/Vq/OcY11ry4wkA5iQMlrjsu78f596oAsCOWxNx+dxZvcP9DzIgpERETR47Ls3dEG9m483+WV3J30gjIjWy4Q5pYYnJTgb7tq1xLQu18f4uvElAyKTgokE3AHwYWLDxICEi3wNoUqpncXoGHE5BR9U4U0FlPiGExBIBvK9higS1RuxgBMGZ8dA+Bupu7N6GMR7oTA/4SX86EshdzyRhW5hkxYeRy5RhBmkkOJlTD1YnSiZmAihWtZBntugnzECjobzv7JdRH5fPW7vKce5GnuCB5gwJBgaBAUCAoEBR4CwX+AXYlNJom4iK0AAAAAElFTkSuQmCC"), pointer !important;
 	}
