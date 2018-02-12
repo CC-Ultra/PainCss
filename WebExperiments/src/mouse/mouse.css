@@ -6,13 +6,24 @@
 	}
 .portal
 	{
+	background-position: right 10px top 0px;
+	background-repeat: no-repeat;
+	background-size: contain;
 	background-image: url("mouse/pics/portal.png");
 	}
 .paint
 	{
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
 	background-image: url("mouse/pics/paint.png");
+	}
+.hidden_mouse
+	{
+	opacity: 0;
 	}
 .element
 	{
 	width: 100%;
+	height: 100%
 	}
