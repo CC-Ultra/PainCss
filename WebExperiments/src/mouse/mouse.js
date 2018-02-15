@@ -1,3 +1,4 @@
+//const arrow="https://cdn.rawgit.com/CC-Ultra/PainCss/gh-pages/WebExperiments/src/mouse/pics/arrow.png";
 const arrow="mouse/pics/arrow.png";
 
 var errorClicks=0;
