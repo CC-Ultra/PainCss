@@ -1,29 +1,153 @@
+@keyframes hide_mouse
+	{
+	0%
+		{
+		filter: opacity(1);
+		}
+	100%
+		{
+		filter: opacity(0);
+		}
+	}
+@keyframes show_mouse
+	{
+	0%
+		{
+		filter: opacity(0);
+		}
+	100%
+		{
+		filter: opacity(1);
+		}
+	}
+@keyframes blink_portal
+	{
+	0%
+		{
+		filter: invert(0);
+		}
+	50%
+		{
+		filter: invert(1);
+		}
+	}
+@keyframes cheese_extinct
+	{
+	0%
+		{
+		transform: scale(1);
+		}
+	100%
+		{
+		transform: scale(0);
+		}
+	}
+@font-face
+	{
+	font-family: Scraps;
+	src: url(../fonts/SCRAPS.ttf);
+	/*src: url(https://rawgit.com/CC-Ultra/PainCss/master/WebExperiments/src/fonts/SCRAPS.ttf);*/
+	}
+@font-face
+	{
+	font-family: Greece;
+	src: url(../fonts/ds_greece.ttf);
+	/*src: url(https://rawgit.com/CC-Ultra/PainCss/master/WebExperiments/src/fonts/ds_greece.ttf);*/
+	}
+
+.counter_label
+	{
+	position: absolute;
+	margin-top: 5px;
+	font-size: 25px;
+	color: #FFFFFF;
+	float: left;
+	}
+.counter_value
+	{
+	font-family: Greece;
+	color: #0000FF;
+	font-size: 30px;
+	}
+.counter_line
+	{
+	width: 100%;
+	height: 30px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	}
+#msg
+	{
+	font-family: Scraps;
+	color: #C77213;
+	font-size: 50px;
+	}
+#btn_help
+	{
+	color: #00FF00;
+	font-size: 30px;
+	background-color: #000000;
+	border-radius: 50%;
+	outline: none;
+	}
 .floor
 	{
 	background-color: maroon;
 	width: 100%;
 	height: 20px;
 	}
+.no_way
+	{
+	cursor: not-allowed;
+	}
 .portal
 	{
 	background-position: right 10px top 0px;
 	background-repeat: no-repeat;
 	background-size: contain;
-	background-image: url("mouse/pics/portal.png");
+	background-image: url("../mouse/pics/portal.png");
+	/*background-image: url("https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/portal.png");*/
 	}
 .paint
 	{
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
-	background-image: url("mouse/pics/paint.png");
-	}
-.hidden_mouse
-	{
-	opacity: 0;
+	background-image: url("../mouse/pics/paint.png");
+	/*background-image: url("https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/paint.png");*/
 	}
 .element
 	{
 	width: 100%;
 	height: 100%
+	}
+.hidden_mouse
+	{
+	opacity: 0;
+	}
+.cheese_extinction_animation
+	{
+	animation: cheese_extinct 3000ms linear 1;
+	}
+.mouse_hide_animation
+	{
+	animation: hide_mouse 500ms linear 2;
+	}
+.mouse_show_animation
+	{
+	animation: show_mouse 500ms linear 2;
+	}
+.portal_move_animation
+	{
+	animation: blink_portal 500ms linear 3;
+	}
+.hint
+	{
+	margin-top: -50%;
+	margin-left: -10%;
+	position: absolute;
+	}
+.reset_active:active
+	{
+	filter: invert(1);
 	}

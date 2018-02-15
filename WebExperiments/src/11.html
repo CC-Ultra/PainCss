@@ -1,201 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="stylesheet" href="bootstrap.min.css"/>
+	<script src="jquery-3.3.1.js"></script>
+
 	<!--<link rel="stylesheet" type="text/css" href="default_vk/common.css?28078398903">-->
 	<!--<link rel="stylesheet" type="text/css" href="pain.css">-->
 	<link rel="stylesheet" href="mouse/mouse.css"/>
-
-	<link rel="stylesheet" href="bootstrap.min.css"/>
+	<script src="mouse/mouse.js"></script>
 
 	<meta charset="UTF-8">
-	<title>Pain</title>
+	<title>Mouse game</title>
 </head>
 
-<body>
-	<div class="container-fluid" style="background-color: #856404; padding: 0">
-		<!--1-->
-		<div class="row">
-			<div class="col-md-1">
-				<img src="mouse/pics/reset.png" class="element" style="padding: 10px"/>
-			</div>
-			<div class="col-md-1 portal">
-				<img src="mouse/pics/mouse.png" class="element"/>
-			</div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 portal">
-				<img src="mouse/pics/mouse.png" class="element hidden_mouse"/>
-			</div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 portal">
-				<img src="mouse/pics/mouse.png" class="element hidden_mouse"/>
-			</div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 paint"></div>
-		</div>
-		<div class="floor"></div>
+<body style="background-color: #000000">
+	<div align="center">
+		<h1 style="color: #FF0000">Мыша!</h1>
+	</div>
 
-		<!--2-->
-		<div class="row">
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 portal">
-				<img src="mouse/pics/mouse.png" class="element hidden_mouse"/>
-			</div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 portal">
-				<img src="mouse/pics/mouse.png" class="element hidden_mouse"/>
-			</div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 paint"></div>
-		</div>
-		<div class="floor"></div>
+	<div style="margin: 15px">
+		<div class="container-fluid">
+			<div class="row" style="height: 80px">
 
-		<!--3-->
-		<div class="row">
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 portal">
-				<img src="mouse/pics/mouse.png" class="element hidden_mouse"/>
-			</div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 portal">
-				<img src="mouse/pics/mouse.png" class="element hidden_mouse"/>
-			</div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 portal">
-				<img src="mouse/pics/mouse.png" class="element hidden_mouse"/>
-			</div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 paint"></div>
-		</div>
-		<div class="floor"></div>
+				<div class="col-md-3">
+					<button id="btn_help" class="element">На помощь!</button>
+				</div>
 
-		<!--4-->
-		<div class="row">
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 portal">
-				<img src="mouse/pics/mouse.png" class="element hidden_mouse"/>
-			</div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 portal">
-				<img src="mouse/pics/mouse.png" class="element hidden_mouse"/>
-			</div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 paint"></div>
-		</div>
-		<div class="floor"></div>
+				<div class="col-md-5" style="background-color: #0E0F11">
+					<div id="msg" align="center"></div>
+				</div>
 
-		<!--5-->
-		<div class="row">
-			<div class="col-md-1 portal">
-				<img src="mouse/pics/mouse.png" class="element hidden_mouse"/>
-			</div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 portal">
-				<img src="mouse/pics/mouse.png" class="element hidden_mouse"/>
-			</div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 portal">
-				<img src="mouse/pics/mouse.png" class="element hidden_mouse"/>
-			</div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 portal"></div>
-		</div>
-		<div class="floor"></div>
+				<div class="col-md-3" style="background-color: #0E0F11; margin-left: 20px">
+					<div class="counter_line">
+						<div class="counter_label">Ходы</div>
+						<div class="counter_value" align="right" id="movesVal"></div>
+					</div>
+					<div class="counter_line" id="hideable_counter_line">
+						<div class="counter_label">Подсказки</div>
+						<div class="counter_value" align="right" id="honourPointsVal"></div>
+					</div>
+				</div>
 
-		<!--6-->
-		<div class="row">
-			<div class="col-md-1 portal">
-				<img src="mouse/pics/mouse.png" class="element hidden_mouse"/>
 			</div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 portal">
-				<img src="mouse/pics/mouse.png" class="element hidden_mouse"/>
-			</div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 portal">
-				<img src="mouse/pics/mouse.png" class="element hidden_mouse"/>
-			</div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 paint"></div>
 		</div>
-		<div class="floor"></div>
+	</div>
 
-		<!--7-->
-		<div class="row">
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 portal">
-				<img src="mouse/pics/mouse.png" class="element hidden_mouse"/>
+	<div style="margin: 20px">
+		<div class="container-fluid" style="background-color: #856404; padding: 0">
+			<!--1-->
+			<div class="row" style="padding-right: 15px">
+				<div class="col-md-1 reset_active" id="reset">
+					<img src="mouse/pics/reset.png" class="element" style="padding: 10px"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/reset.png" class="element" style="padding: 10px"/>-->
+				</div>
+				<div class="col-md-1 portal block11 current_position" data-jump=".block21">
+					<img src="mouse/pics/mouse.png" class="element"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/mouse.png" class="element"/>-->
+				</div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 portal block12" data-jump=".block71">
+					<img src="mouse/pics/mouse.png" class="element"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/mouse.png" class="element"/>-->
+				</div>
+				<div class="col-md-1 portal block12" data-jump=".block62"></div>
+				<div class="col-md-1 portal block12" data-jump=".block61"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 portal block13" data-jump=".block73">
+					<img src="mouse/pics/mouse.png" class="element"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/mouse.png" class="element"/>-->
+				</div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 paint"></div>
 			</div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 portal">
-				<img src="mouse/pics/mouse.png" class="element hidden_mouse"/>
-			</div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 portal">
-				<img src="mouse/pics/mouse.png" class="element hidden_mouse"/>
-			</div>
-			<div class="col-md-1 portal"></div>
-		</div>
-		<div class="floor"></div>
+			<div class="floor"></div>
 
-		<!--8-->
-		<div class="row">
-			<div class="col-md-1 portal">
-				<img src="mouse/pics/mouse.png" class="element hidden_mouse"/>
+			<!--2-->
+			<div class="row" style="padding-right: 15px">
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 portal block21" data-jump=".block12">
+					<img src="mouse/pics/mouse.png" class="element"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/mouse.png" class="element"/>-->
+				</div>
+				<div class="col-md-1 portal block21" data-jump=".block33"></div>
+				<div class="col-md-1 portal block21" data-jump=".block62"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 portal block22" data-jump=".block12">
+					<img src="mouse/pics/mouse.png" class="element"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/mouse.png" class="element"/>-->
+				</div>
+				<div class="col-md-1 portal block22" data-jump=".block82"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 paint"></div>
 			</div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 portal">
-				<img src="mouse/pics/mouse.png" class="element hidden_mouse"/>
+			<div class="floor"></div>
+
+			<!--3-->
+			<div class="row" style="padding-right: 15px">
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 portal block31" data-jump=".block22">
+					<img src="mouse/pics/mouse.png" class="element"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/mouse.png" class="element"/>-->
+				</div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 portal block32" data-jump=".block13">
+					<img src="mouse/pics/mouse.png" class="element"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/mouse.png" class="element"/>-->
+				</div>
+				<div class="col-md-1 portal block32" data-jump=".block62"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 portal block33" data-jump=".block41">
+					<img src="mouse/pics/mouse.png" class="element"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/mouse.png" class="element"/>-->
+				</div>
+				<div class="col-md-1 portal block33" data-jump=".block41"></div>
+				<div class="col-md-1 portal block33" data-jump=".block22"></div>
+				<div class="col-md-1 paint"></div>
 			</div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 portal"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 paint"></div>
-			<div class="col-md-1 portal">
-				<img src="mouse/pics/mouse.png" class="element hidden_mouse"/>
+			<div class="floor"></div>
+
+			<!--4-->
+			<div class="row" style="padding-right: 15px">
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 portal block41" data-jump=".block53">
+					<img src="mouse/pics/mouse.png" class="element"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/mouse.png" class="element"/>-->
+				</div>
+				<div class="col-md-1 portal block41" data-jump=".block33"></div>
+				<div class="col-md-1 portal block41" data-jump=".block51"></div>
+				<div class="col-md-1 portal block41" data-jump=".block71"></div>
+				<div class="col-md-1 portal block41" data-jump=".block42"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 portal block42" data-jump=".block82">
+					<img src="mouse/pics/mouse.png" class="element"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/mouse.png" class="element"/>-->
+				</div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 paint"></div>
 			</div>
-			<div class="col-md-1">
-				<img src="mouse/pics/cheese.png" class="element"/>
+			<div class="floor"></div>
+
+			<!--5-->
+			<div class="row" style="padding-right: 15px">
+				<div class="col-md-1 portal block51" data-jump=".block52">
+					<img src="mouse/pics/mouse.png" class="element"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/mouse.png" class="element"/>-->
+				</div>
+				<div class="col-md-1 portal block51" data-jump=".block33"></div>
+				<div class="col-md-1 portal block51" data-jump=".block53"></div>
+				<div class="col-md-1 portal block51" data-jump=".block61"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 portal block52" data-jump=".block72">
+					<img src="mouse/pics/mouse.png" class="element"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/mouse.png" class="element"/>-->
+				</div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 portal block53" data-jump=".block51">
+					<img src="mouse/pics/mouse.png" class="element"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/mouse.png" class="element"/>-->
+				</div>
+				<div class="col-md-1 portal block53" data-jump=".block52"></div>
+				<div class="col-md-1 portal block53" data-jump=".block63"></div>
 			</div>
-			<div class="col-md-1 paint"></div>
+			<div class="floor"></div>
+
+			<!--6-->
+			<div class="row" style="padding-right: 15px">
+				<div class="col-md-1 portal block61" data-jump=".block12">
+					<img src="mouse/pics/mouse.png" class="element"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/mouse.png" class="element"/>-->
+				</div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 portal block62" data-jump=".block72">
+					<img src="mouse/pics/mouse.png" class="element"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/mouse.png" class="element"/>-->
+				</div>
+				<div class="col-md-1 portal block62" data-jump=".block41"></div>
+				<div class="col-md-1 portal block62" data-jump=".block21"></div>
+				<div class="col-md-1 portal block62" data-jump=".block21"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 portal block63" data-jump=".block51">
+					<img src="mouse/pics/mouse.png" class="element"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/mouse.png" class="element"/>-->
+				</div>
+				<div class="col-md-1 portal block63" data-jump=".block81"></div>
+				<div class="col-md-1 paint"></div>
+			</div>
+			<div class="floor"></div>
+
+			<!--7-->
+			<div class="row" style="padding-right: 15px">
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 portal block71" data-jump=".block41">
+					<img src="mouse/pics/mouse.png" class="element"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/mouse.png" class="element"/>-->
+				</div>
+				<div class="col-md-1 portal block71" data-jump=".block51"></div>
+				<div class="col-md-1 portal block71" data-jump=".block62"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 portal block72" data-jump=".block21">
+					<img src="mouse/pics/mouse.png" class="element"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/mouse.png" class="element"/>-->
+				</div>
+				<div class="col-md-1 portal block72" data-jump=".block33"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 portal block73" data-jump=".block83">
+					<img src="mouse/pics/mouse.png" class="element"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/mouse.png" class="element"/>-->
+				</div>
+				<div class="col-md-1 portal block73" data-jump=".block82"></div>
+			</div>
+			<div class="floor"></div>
+
+			<!--8-->
+			<div class="row" style="padding-right: 15px">
+				<div class="col-md-1 portal block81" data-jump=".block82">
+					<img src="mouse/pics/mouse.png" class="element"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/mouse.png" class="element"/>-->
+				</div>
+				<div class="col-md-1 portal block81" data-jump=".block32"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 portal block82" data-jump=".block31">
+					<img src="mouse/pics/mouse.png" class="element"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/mouse.png" class="element"/>-->
+				</div>
+				<div class="col-md-1 portal block82" data-jump=".block71"></div>
+				<div class="col-md-1 portal block82" data-jump=".block41"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 paint"></div>
+				<div class="col-md-1 portal block83" data-jump="devour">
+					<img src="mouse/pics/mouse.png" class="element"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/mouse.png" class="element"/>-->
+				</div>
+				<div class="col-md-1">
+					<img src="mouse/pics/cheese.png" class="element" id="cheese"/>
+					<!--<img src="https://cdn.rawgit.com/CC-Ultra/PainCss/83b35313/WebExperiments/src/mouse/pics/cheese.png" class="element"/>-->
+				</div>
+				<div class="col-md-1 paint"></div>
+			</div>
+			<div class="floor"></div>
 		</div>
-		<div class="floor"></div>
 	</div>
 </body>
 </html>
